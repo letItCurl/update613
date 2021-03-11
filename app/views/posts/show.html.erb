@@ -13,7 +13,14 @@
 <% if(@post.file.attached?) %>
   <p>
     <strong>File:</strong> <br>
-    <%= image_tag @post.file %>
+    <%= image_tag rails_storage_proxy_path(@post.file) %>
+  </p>
+<% end %>
+
+<% if(@post.cover.attached?) %>
+  <p>
+    <strong>Cover:</strong> <br>
+    <%= image_tag rails_storage_proxy_path(@post.cover) %>
   </p>
 <% end %>
 
